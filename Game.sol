@@ -12,8 +12,17 @@ contract Game is interfaceGame {
     uint defence;
     uint health;
     address killerAddr;
+
+    modifier onlyOwner {
+        require(msg.pubkey() == tvm.pubkey(), 100);
+		tvm.accept();
+		_;
+	}
+
 // принять атаку
     function acceptAttack(uint aPower) external override{
+
+       //uint aPower = unitInt(msg.sender).getAttackPower();
 
        uint damage;
        if (defence <= aPower){
@@ -34,7 +43,7 @@ contract Game is interfaceGame {
        tvm.accept();
     }
     
-    function death (address enemyAddr) public  {
+    function death (address enemyAddr) public {
         // обработка гибели (вызов метода самоунечтожения)
         killerAddr = enemyAddr;
         enemyAddr.transfer(0, true, 128);

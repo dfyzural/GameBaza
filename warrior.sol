@@ -18,8 +18,8 @@ contract warrior is unit {
         // message is signed with the owner's private key
         require(msg.pubkey() == tvm.pubkey(), 102);
 
-        defence=20;
-        health = 100;
+        defence=15;
+        health = 70;
         attackPower=50;
         uType = "Warrior";
         bazaAddr = bazaAddress;

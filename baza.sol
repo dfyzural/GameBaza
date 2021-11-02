@@ -8,9 +8,7 @@ pragma AbiHeader expire;
 
 import "Game.sol";
 
-interface  unitInt{
-    function deathBase (address enemyAddr) external;
-}
+
 
 // This is class that describes you smart contract.
 contract baza is Game {
@@ -25,8 +23,8 @@ contract baza is Game {
         // message is signed with the owner's private key
         require(msg.pubkey() == tvm.pubkey(), 102);
         
-        defence = 45;
-        health = 300;
+        defence = 30;
+        health = 100;
         iList = 0;
 
         tvm.accept();

@@ -8,6 +8,12 @@ pragma AbiHeader expire;
 
 // This is class that describes you smart contract.
 interface interfaceGame {
- function acceptAttack(uint aPower) external;
-    
+ function acceptAttack(uint aPower) external;   
 }
+
+interface  unitInt{
+    function deathBase(address enemyAddr) external;
+//    function getAttackPower() external view returns(uint);
+}
+
+/* */

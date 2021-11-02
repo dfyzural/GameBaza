@@ -9,8 +9,6 @@ pragma AbiHeader expire;
 import "Game.sol";
 import "baza.sol";
 
-
-
 contract unit is Game {
 
 address bazaAddr;
@@ -25,7 +23,7 @@ string uType;
         tvm.accept();
     }
 
-    function getAttackPower () public view returns (uint) {
+    function getAttackPower() public view returns (uint) {
         return attackPower;
     }
     

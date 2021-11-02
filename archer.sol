@@ -19,7 +19,7 @@ contract archer is unit {
         require(msg.pubkey() == tvm.pubkey(), 102);
 
         defence=10;
-        health = 100;
+        health = 70;
         attackPower=60;
         uType = "Archer";
         bazaAddr = bazaAddress;
