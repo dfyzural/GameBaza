@@ -69,12 +69,12 @@ contract baza is Game {
         //tvm.accept();
     }
 
-    function destruction(address enemyAddr) public override{
+    function destruction() public override{
         // смерть юнитов
         optional(uint, address) currentOpt = unitsList.min();
         while (currentOpt.hasValue()){
             (uint key, address addr) = currentOpt.get();
-            unitInt(addr).deathBase(enemyAddr);
+            unitInt(addr).deathBase(killerAddr);
             currentOpt = unitsList.next(key);
             tvm.accept();
         }

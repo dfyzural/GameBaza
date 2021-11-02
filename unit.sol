@@ -34,15 +34,17 @@ string uType;
         _;
     }
 
-    function deathBase (address enemyAddr) public pure onlyBase{
+    function deathBase (address enemyAddr) public onlyBase{
         // гибель от базы
+        health=0;
         death(enemyAddr);
         tvm.accept();
     }
 
-    function destruction(address enemyAddr) public override{
+    function destruction() public override{
         // самоуничтожение + убрать с базы
         attackPower = 0;
+        defence = 0;
         baza(bazaAddr).delUnit();        
     }
 }

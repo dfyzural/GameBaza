@@ -11,7 +11,7 @@ contract Game is interfaceGame {
     
     uint defence;
     uint health;
-
+    address killerAddr;
 // принять атаку
     function acceptAttack(uint aPower) external override{
 
@@ -36,12 +36,13 @@ contract Game is interfaceGame {
     
     function death (address enemyAddr) public  {
         // обработка гибели (вызов метода самоунечтожения)
+        killerAddr = enemyAddr;
         enemyAddr.transfer(0, true, 128);
-        destruction(enemyAddr);
+        destruction();
         tvm.accept();
     }
 
-    function live() public returns (bool){
+    function live() public view returns (bool){
         if (health>0){
             return true;
         }else{
@@ -50,7 +51,7 @@ contract Game is interfaceGame {
 
     }
 
-    function destruction(address enemyAddr) public virtual{
+    function destruction() public virtual{
         // самоуничтожение        
     }
 

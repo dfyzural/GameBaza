@@ -30,6 +30,7 @@
 		{
 			"name": "deathBase",
 			"inputs": [
+				{"name":"enemyAddr","type":"address"}
 			],
 			"outputs": [
 			]
@@ -92,6 +93,7 @@
 		{"name":"_constructorFlag","type":"bool"},
 		{"name":"defence","type":"uint256"},
 		{"name":"health","type":"uint256"},
+		{"name":"killerAddr","type":"address"},
 		{"name":"bazaAddr","type":"address"},
 		{"name":"attackPower","type":"uint256"},
 		{"name":"uType","type":"string"}

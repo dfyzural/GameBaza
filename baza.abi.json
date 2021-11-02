@@ -90,6 +90,7 @@
 		{"name":"_constructorFlag","type":"bool"},
 		{"name":"defence","type":"uint256"},
 		{"name":"health","type":"uint256"},
+		{"name":"killerAddr","type":"address"},
 		{"name":"unitsList","type":"map(uint256,address)"},
 		{"name":"iList","type":"uint256"}
 	]
